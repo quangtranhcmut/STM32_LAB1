@@ -9,6 +9,7 @@
 #define INC_EXERCISE3_H_
 
 #include "main.h"
+#include "7segled.h"
 
 #define LED1_STATE 0
 #define LED2_STATE 1

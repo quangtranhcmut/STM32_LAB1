@@ -151,21 +151,24 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin|LED_YELLOW_Pin|SEG_0_Pin|SEG_1_Pin
-                          |SEG_2_Pin|SEG_3_Pin|SEG_4_Pin|SEG_5_Pin
-                          |SEG_6_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, BSEG_0_Pin|BSEG_1_Pin|BSEG_2_Pin|BSEG_3_Pin
+                          |BSEG_4_Pin|LED_RED_Pin|LED_YELLOW_Pin|ASEG_0_Pin
+                          |ASEG_1_Pin|ASEG_2_Pin|ASEG_3_Pin|ASEG_4_Pin
+                          |ASEG_5_Pin|ASEG_6_Pin|BSEG_5_Pin|BSEG_6_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_11_Pin
                           |LED_12_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin
                           |LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_RED_Pin LED_YELLOW_Pin SEG_0_Pin SEG_1_Pin
-                           SEG_2_Pin SEG_3_Pin SEG_4_Pin SEG_5_Pin
-                           SEG_6_Pin */
-  GPIO_InitStruct.Pin = LED_RED_Pin|LED_YELLOW_Pin|SEG_0_Pin|SEG_1_Pin
-                          |SEG_2_Pin|SEG_3_Pin|SEG_4_Pin|SEG_5_Pin
-                          |SEG_6_Pin;
+  /*Configure GPIO pins : BSEG_0_Pin BSEG_1_Pin BSEG_2_Pin BSEG_3_Pin
+                           BSEG_4_Pin LED_RED_Pin LED_YELLOW_Pin ASEG_0_Pin
+                           ASEG_1_Pin ASEG_2_Pin ASEG_3_Pin ASEG_4_Pin
+                           ASEG_5_Pin ASEG_6_Pin BSEG_5_Pin BSEG_6_Pin */
+  GPIO_InitStruct.Pin = BSEG_0_Pin|BSEG_1_Pin|BSEG_2_Pin|BSEG_3_Pin
+                          |BSEG_4_Pin|LED_RED_Pin|LED_YELLOW_Pin|ASEG_0_Pin
+                          |ASEG_1_Pin|ASEG_2_Pin|ASEG_3_Pin|ASEG_4_Pin
+                          |ASEG_5_Pin|ASEG_6_Pin|BSEG_5_Pin|BSEG_6_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

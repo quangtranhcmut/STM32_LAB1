@@ -8,9 +8,9 @@
 #include "exercise3.h"
 
 int xline_state = LED1_STATE;
+int xline_count = 3;
 int yline_state = LED6_STATE;
-int xline_count = 0;
-int yline_count = 0;
+int yline_count = 5;
 
 void led1(){
 	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_SET);
@@ -48,62 +48,70 @@ void exercise3_run() {
 	switch(xline_state) {
 		case LED1_STATE: {
 			led1();
-			xline_count++;
-			if(xline_count >= 3) {
+			displayDigit(A_7SEG, xline_count - 1);
+			xline_count--;
+			if(xline_count <= 0) {
 				xline_state = LED2_STATE;
-				xline_count = 0;
+				xline_count = 2;
 			}
 			break;
 		}
 		case LED2_STATE: {
 			led2();
-			xline_count++;
-			if(xline_count >= 2) {
+			displayDigit(A_7SEG, xline_count - 1);
+			xline_count--;
+			if(xline_count <= 0) {
 				xline_state = LED3_STATE;
-				xline_count = 0;
+				xline_count = 5;
 			}
 			break;
 		}
 		case LED3_STATE: {
 			led3();
-			xline_count++;
-			if(xline_count >= 5){
+			displayDigit(A_7SEG, xline_count - 1);
+			xline_count--;
+			if(xline_count <= 0){
 				xline_state = LED1_STATE;
-				xline_count = 0;
+				xline_count = 3;
 			}
 			break;
 		}
-		default: break;
+		default:
+			break;
 	}
 
 	switch(yline_state) {
 		case LED4_STATE: {
 			led4();
-			yline_count++;
-			if(yline_count >= 3) {
+			displayDigit(B_7SEG, yline_count - 1);
+			yline_count--;
+			if(yline_count <= 0) {
 				yline_state = LED5_STATE;
-				yline_count = 0;
+				yline_count = 2;
 			}
 			break;
 		}
 		case LED5_STATE: {
 			led5();
-			yline_count++;
-			if(yline_count >= 2) {
+			displayDigit(B_7SEG, yline_count - 1);
+			yline_count--;
+			if(yline_count <= 0) {
 				yline_state = LED6_STATE;
-				yline_count = 0;
+				yline_count = 5;
 			}
 			break;
 		}
 		case LED6_STATE: {
 			led6();
-			yline_count++;
-			if(yline_count >= 5){
+			displayDigit(B_7SEG, yline_count - 1);
+			yline_count--;
+			if(yline_count <= 0){
 				yline_state = LED4_STATE;
-				yline_count = 0;
+				yline_count = 3;
 			}
 			break;
 		}
-		default: break;
+		default:
+			break;
 	}
 }
