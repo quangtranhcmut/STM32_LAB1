@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "exercise4.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -86,7 +86,8 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
+  init_exercise4();
+  int counter = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -96,6 +97,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  if(counter >= 10 || counter < 0) {
+		  counter = 0;
+	  }
+	  display7SEG(counter++);
+	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
