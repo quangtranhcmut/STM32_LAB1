@@ -1,0 +1,7 @@
+exercise3.c:15:6:led1	8	static
+exercise3.c:20:6:led2	8	static
+exercise3.c:25:6:led3	8	static
+exercise3.c:31:6:led4	8	static
+exercise3.c:36:6:led5	8	static
+exercise3.c:41:6:led6	8	static
+exercise3.c:47:6:exercise3_run	8	static
