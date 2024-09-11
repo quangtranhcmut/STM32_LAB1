@@ -22,7 +22,8 @@
 #define LED_11 11
 #define LED_12 12
 
-void check_led(int led_serial);
+void setNumberOnClock(int num);
+void clearNumberOnClock(int num);
 void clearAllClock();
 void exercise6_run();
 #endif /* INC_CLOCK_LED_H_ */
