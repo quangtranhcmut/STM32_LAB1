@@ -134,12 +134,37 @@ void clearAllClock() {
 	HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, 0);
 }
 
+void init_exercise(){
+	clearAllClock();
+}
 
-int led_serial = 1;
+int led_serial = 0;
 void exercise6_run() {
 	setNumberOnClock(led_serial++);
-	if (led_serial > 13 || led_serial <= 0) {
-	  led_serial = 1;
+	if (led_serial > 12 || led_serial < 0) {
+	  led_serial = 0;
 	  clearAllClock();
 	}
+}
+
+int hour = 0;
+int minute = 0;
+int second = 0;
+void exercise10_run() {
+	second++;
+	if(second >= 60) {
+		second = 0;
+		minute++;
+	}
+	if(minute >= 60) {
+		minute = 0;
+		hour++;
+	}
+	if(hour >= 12) {
+		hour = 0;
+	}
+	clearAllClock();
+	setNumberOnClock(hour);
+	setNumberOnClock((minute / 5));
+	setNumberOnClock((second / 5));
 }

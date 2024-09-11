@@ -86,7 +86,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  clearAllClock();
+  init_exercise();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -96,8 +96,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  exercise6_run();
-	  HAL_Delay(200);
+	  exercise10_run();
+	  HAL_Delay(20);
+//	  exercise6_run();
+//	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }

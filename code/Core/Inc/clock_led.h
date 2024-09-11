@@ -20,10 +20,12 @@
 #define LED_9 9
 #define LED_10 10
 #define LED_11 11
-#define LED_12 12
+#define LED_12 0
 
 void setNumberOnClock(int num);
 void clearNumberOnClock(int num);
 void clearAllClock();
+void init_exercise();
 void exercise6_run();
+void exercise10_run();
 #endif /* INC_CLOCK_LED_H_ */

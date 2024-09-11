@@ -1,4 +1,6 @@
 clock_led.c:10:6:setNumberOnClock	16	static
 clock_led.c:66:6:clearNumberOnClock	16	static
 clock_led.c:122:6:clearAllClock	8	static
-clock_led.c:139:6:exercise6_run	8	static
+clock_led.c:137:6:init_exercise	8	static
+clock_led.c:142:6:exercise6_run	8	static
+clock_led.c:153:6:exercise10_run	8	static
